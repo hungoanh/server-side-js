@@ -5,8 +5,21 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+// Importing lodash, a handy utility library
+const _ = require('lodash');
+
+// Importing Passport JS and JWT libraries
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
+const passportJWT = require('passport-jwt');
+
+const ExtractJwt = passportJWT.ExtractJwt;
+const JwtStrategy = passportJWT.Strategy;
+
+// Import route modules
 const index = require('./routes/index');
 const users = require('./routes/users');
+const login = require('./routes/login');
 
 const app = express();
 
